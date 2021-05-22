@@ -19,8 +19,8 @@ services:
     container_name: merkur_client
     command: yarn start
     environment:
-      - NEXT_PUBLIC_API_URL=http://server:3333
-      - NEXT_PUBLIC_SITE_URL=http://client:3000
+      - NEXT_PUBLIC_API_URL=http://165.227.214.134/api
+      - NEXT_PUBLIC_SITE_URL=http://165.227.214.134
     depends_on:
         - postgres
     networks:
@@ -49,11 +49,11 @@ services:
     # ports:
     #     - 5432:5432
     volumes:
-        - merkur_postgres_data:/var/lib/postgresql/data
+        - ./postgres_data:/var/lib/postgresql/data
     networks:
         - merkur
 
 volumes:
-    merkur_postgres_data:
+    postgres_data:
 networks:
   merkur:
